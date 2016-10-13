@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:paddingBottom="16dp"
+    android:paddingLeft="16dp"
+    android:paddingRight="16dp"
+    android:paddingTop="16dp"
+    tools:visibility="visible">
+
+    <ImageView
+        android:id="@+id/chooser_status"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        app:srcCompat="@drawable/vec_check"
+        tools:src="@drawable/vec_check" />
+
+    <TextView
+        android:id="@+id/name"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_weight="1"
+        android:textColor="@android:color/black"
+        android:textSize="15sp"
+        tools:text="Afghanistan" />
+
+    <ImageView
+        android:id="@android:id/icon"
+        android:layout_width="28dp"
+        android:layout_height="18dp"
+        android:layout_gravity="center"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp" />
+
+    <TextView
+        android:id="@+id/code"
+        android:layout_width="66dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:fontFamily="sans-serif-medium"
+        android:gravity="start"
+        android:textColor="@android:color/black"
+        android:textSize="15sp"
+        tools:text="+44 1534" />
+</LinearLayout>
