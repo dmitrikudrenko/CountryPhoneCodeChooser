@@ -6,7 +6,7 @@ Component given ability to choose phone code from list.
 Download
 --------
 [ ![Download](https://api.bintray.com/packages/dmitrikudrenko/maven/Countryphonecodechooser/images/download.svg) ](https://bintray.com/dmitrikudrenko/maven/Countryphonecodechooser/_latestVersion)
-[![Build Status](https://travis-ci.org/dmitrikudrenko/Countryphonecodechooser.svg?branch=master)](https://travis-ci.org/dmitrikudrenko/Countryphonecodechooser)
+[![Build Status](https://travis-ci.org/dmitrikudrenko/CountryPhoneCodeChooser.svg?branch=master)](https://travis-ci.org/dmitrikudrenko/Countryphonecodechooser)
 
 Maven
 ```xml
