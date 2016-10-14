@@ -6,7 +6,7 @@ buildscript {
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:2.2.1'
-
+        classpath 'com.novoda:bintray-release:0.3.4'
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
     }
@@ -20,4 +20,14 @@ allprojects {
 
 task clean(type: Delete) {
     delete rootProject.buildDir
+}
+
+project.ext {
+    androidCompileSdkVersion = 24
+    androidBuildToolsVersion = '24.0.2'
+    androidMinSdkVersion = 14
+    androidTargetSdkVersion = 24
+
+    libraryVersionCode = 1
+    libraryVersionName = "1.0"
 }
