@@ -3,6 +3,10 @@ Country phone code chooser
 
 Component given ability to choose phone code from list.
 
+##Screenshots
+![Image](https://raw.githubusercontent.com/dmitrikudrenko/CountryPhoneCodeChooser/master/media/screenshot_1.png)
+![Image](https://raw.githubusercontent.com/dmitrikudrenko/CountryPhoneCodeChooser/master/media/screenshot_2.png)
+
 Download
 --------
 [ ![Download](https://api.bintray.com/packages/dmitrikudrenko/maven/Countryphonecodechooser/images/download.svg) ](https://bintray.com/dmitrikudrenko/maven/Countryphonecodechooser/_latestVersion)
