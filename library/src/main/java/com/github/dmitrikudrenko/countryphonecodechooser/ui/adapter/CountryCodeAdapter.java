@@ -42,7 +42,7 @@ public class CountryCodeAdapter extends RecyclerView.Adapter<CountryCodeAdapter.
     }
 
     void bind(CodeViewHolder holder, CountryCode countryCode) {
-        holder.bind(countryCode, countryCode == this.selected);
+        holder.bind(countryCode, countryCode.equals(selected));
     }
 
     @Override
@@ -60,6 +60,7 @@ public class CountryCodeAdapter extends RecyclerView.Adapter<CountryCodeAdapter.
 
     void setSelected(CountryCode selected) {
         this.selected = selected;
+        notifyDataSetChanged();
     }
 
     public void update(List<CountryCode> data) {

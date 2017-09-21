@@ -8,7 +8,7 @@
     android:orientation="horizontal"
     android:paddingLeft="@dimen/country_horizontal_padding"
     android:paddingRight="@dimen/country_horizontal_padding"
-    android:background="@drawable/country_row">
+    android:background="@drawable/sel_country_row">
 
     <TextView
         android:id="@+id/name"

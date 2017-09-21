@@ -5,6 +5,7 @@ import android.support.annotation.RestrictTo;
 import android.support.annotation.RestrictTo.Scope;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.RecyclerView.AdapterDataObserver;
+import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -87,13 +88,13 @@ public class CountryCodeHeaderAdapter extends RecyclerView.Adapter<RecyclerView.
             }
         }
 
-        if (filter != null) {
+        if (isFilterSet()) {
             Collections.sort(filteredData, new FilterCountryComparator(filter));
         }
     }
 
     private void add(final SectionCountry sectionCountry) {
-        if (filter == null) {
+        if (!isFilterSet()) {
             filteredData.add(sectionCountry);
         } else {
             filteredData.add(new SectionCountry(EMPTY_SECTION, sectionCountry.code));
@@ -101,7 +102,7 @@ public class CountryCodeHeaderAdapter extends RecyclerView.Adapter<RecyclerView.
     }
 
     private boolean matches(final CountryCode code) {
-        return filter == null
+        return !isFilterSet()
                 || code.getName().toLowerCase().contains(filter.toLowerCase())
                 || code.getPhoneCode().contains(filter);
     }
@@ -151,6 +152,10 @@ public class CountryCodeHeaderAdapter extends RecyclerView.Adapter<RecyclerView.
     @Override
     public int getItemCount() {
         return filteredData.size();
+    }
+
+    private boolean isFilterSet() {
+        return !TextUtils.isEmpty(filter);
     }
 
     private static class Section {

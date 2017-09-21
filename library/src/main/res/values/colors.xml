@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="border">#000</color>
+    <color name="border">#000000</color>
 
     <color name="country_text">#e2000000</color>
 
@@ -8,4 +8,10 @@
 
     <color name="section_background">#f3f5f6</color>
     <color name="section_text">#8a9faf</color>
+
+    <color name="icon">#ffffff</color>
+    <color name="hint_text">#e6000000</color>
+    <color name="search_text">#e6000000</color>
+
+    <color name="search_background">#ffffff</color>
 </resources>

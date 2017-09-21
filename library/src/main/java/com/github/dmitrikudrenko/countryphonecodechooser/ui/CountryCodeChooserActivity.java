@@ -5,18 +5,17 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.text.Editable;
-import android.text.TextWatcher;
-import android.view.inputmethod.EditorInfo;
-import android.widget.EditText;
+import android.view.Menu;
+import android.view.MenuItem;
 import com.github.dmitrikudrenko.countryphonecodechooser.model.CountryCode;
 import com.gituhb.dmitrikudrenko.countryphonecodechooser.R;
 
-public class CountryCodeChooserActivity extends AppCompatActivity {
+public class CountryCodeChooserActivity extends AppCompatActivity implements OnSearchInputListener {
     public static final String KEY_COUNTRY = "code";
     private static final String TAG_FRAGMENT =
             "com.github.dmitrikudrenko.countryphonecodechooser.ui.CountryCodeChooserFragment";
     private CountryCodeChooserFragment fragment;
+    private ToolbarSwitcherBuilder toolbarSwitcherBuilder;
 
     @Override
     protected void onCreate(final @Nullable Bundle savedInstanceState) {
@@ -34,36 +33,28 @@ public class CountryCodeChooserActivity extends AppCompatActivity {
                     .findFragmentByTag(TAG_FRAGMENT);
         }
 
-        final Toolbar toolbar = findViewById(R.id.toolbar);
+        Toolbar toolbar = findViewById(R.id.toolbar);
         if (toolbar != null) {
             setSupportActionBar(toolbar);
             toolbar.setNavigationOnClickListener(view -> onBackPressed());
         }
-        final EditText searchView = findViewById(R.id.search);
-        if (searchView != null) {
-            searchView.addTextChangedListener(new TextWatcher() {
-                @Override
-                public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-                }
+        Toolbar searchToolbar = findViewById(R.id.search_toolbar);
+        toolbarSwitcherBuilder = ToolbarSwitcherBuilder.build(searchToolbar, this);
+    }
 
-                @Override
-                public void onTextChanged(CharSequence s, int start, int before, int count) {
-                }
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.home, menu);
+        return super.onCreateOptionsMenu(menu);
+    }
 
-                @Override
-                public void afterTextChanged(Editable editable) {
-                    final String text = editable.toString();
-                    final String query = text.trim().length() > 0 ? text : null;
-                    onQueryTextChange(query);
-                }
-            });
-            searchView.setOnEditorActionListener((view, actionId, event) -> {
-                if (actionId == EditorInfo.IME_ACTION_SEARCH) {
-                    searchView.clearFocus();
-                    return true;
-                }
-                return false;
-            });
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        if (item.getItemId() == R.id.search) {
+            toolbarSwitcherBuilder.onSearchMenuItemClicked();
+            return true;
+        } else {
+            return super.onOptionsItemSelected(item);
         }
     }
 
@@ -72,7 +63,8 @@ public class CountryCodeChooserActivity extends AppCompatActivity {
         finish();
     }
 
-    public void onQueryTextChange(final String query) {
+    @Override
+    public void onSearch(String query) {
         fragment.onSearchChange(query);
     }
 }
