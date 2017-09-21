@@ -1,4 +1,4 @@
-package com.github.dmitrikudrenko.countryphonecodechooser.ui;
+package com.github.dmitrikudrenko.countryphonecodechooser.ui.adapter;
 
 import android.graphics.Bitmap;
 import android.graphics.Canvas;

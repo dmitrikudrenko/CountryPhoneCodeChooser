@@ -1,4 +1,4 @@
-package com.github.dmitrikudrenko.countryphonecodechooser.ui;
+package com.github.dmitrikudrenko.countryphonecodechooser.ui.adapter;
 
 import android.content.Context;
 import android.support.v4.content.ContextCompat;
@@ -38,12 +38,11 @@ public class CountryCodeAdapter extends RecyclerView.Adapter<CountryCodeAdapter.
     @Override
     public void onBindViewHolder(CodeViewHolder holder, int position) {
         CountryCode countryCode = getItem(position);
-        boolean selected = countryCode == this.selected;
-        bind(holder, countryCode, selected);
+        bind(holder, countryCode);
     }
 
-    void bind(CodeViewHolder holder, CountryCode countryCode, boolean selected) {
-        holder.bind(countryCode, selected);
+    void bind(CodeViewHolder holder, CountryCode countryCode) {
+        holder.bind(countryCode, countryCode == this.selected);
     }
 
     @Override
@@ -59,7 +58,7 @@ public class CountryCodeAdapter extends RecyclerView.Adapter<CountryCodeAdapter.
         this.onCodeSelectListener = onCodeSelectListener;
     }
 
-    public void setSelected(CountryCode selected) {
+    void setSelected(CountryCode selected) {
         this.selected = selected;
     }
 

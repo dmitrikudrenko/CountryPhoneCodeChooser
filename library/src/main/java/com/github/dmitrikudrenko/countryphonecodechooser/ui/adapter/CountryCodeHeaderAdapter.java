@@ -1,4 +1,4 @@
-package com.github.dmitrikudrenko.countryphonecodechooser.ui;
+package com.github.dmitrikudrenko.countryphonecodechooser.ui.adapter;
 
 
 import android.support.annotation.RestrictTo;
@@ -10,7 +10,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 import com.github.dmitrikudrenko.countryphonecodechooser.model.CountryCode;
-import com.github.dmitrikudrenko.countryphonecodechooser.ui.CountryCodeAdapter.CodeViewHolder;
+import com.github.dmitrikudrenko.countryphonecodechooser.ui.adapter.CountryCodeAdapter.CodeViewHolder;
 import com.gituhb.dmitrikudrenko.countryphonecodechooser.R;
 import com.timehop.stickyheadersrecyclerview.StickyRecyclerHeadersAdapter;
 
@@ -20,7 +20,7 @@ import java.util.Comparator;
 import java.util.List;
 
 @RestrictTo(Scope.LIBRARY)
-class CountryCodeHeaderAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>
+public class CountryCodeHeaderAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>
         implements StickyRecyclerHeadersAdapter<RecyclerView.ViewHolder> {
     private static final char[] HEADERS = {'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K',
             'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'};
@@ -31,10 +31,9 @@ class CountryCodeHeaderAdapter extends RecyclerView.Adapter<RecyclerView.ViewHol
     private final Section[] sections;
     private List<SectionCountry> originalData;
     private List<SectionCountry> filteredData;
-    private CountryCode selected;
     private String filter;
 
-    CountryCodeHeaderAdapter(CountryCodeAdapter adapter) {
+    public CountryCodeHeaderAdapter(CountryCodeAdapter adapter) {
         this.adapter = adapter;
         adapter.registerAdapterDataObserver(new AdapterDataObserver() {
             @Override
@@ -60,19 +59,15 @@ class CountryCodeHeaderAdapter extends RecyclerView.Adapter<RecyclerView.ViewHol
         }
     }
 
-    void setOnCodeSelectListener(final OnCodeSelectListener onCodeSelectListener) {
-        adapter.setOnCodeSelectListener(countryCode -> {
-            onCodeSelectListener.onCodeSelected(countryCode);
-            selected = countryCode;
-        });
+    public void setOnCodeSelectListener(final OnCodeSelectListener onCodeSelectListener) {
+        adapter.setOnCodeSelectListener(onCodeSelectListener);
     }
 
-    void setSelected(final CountryCode selected) {
-        this.selected = selected;
+    public void setSelected(final CountryCode selected) {
         adapter.setSelected(selected);
     }
 
-    void setFilter(final String filter) {
+    public void setFilter(final String filter) {
         this.filter = filter;
         filterData();
         notifyDataSetChanged();
@@ -130,8 +125,7 @@ class CountryCodeHeaderAdapter extends RecyclerView.Adapter<RecyclerView.ViewHol
     public void onBindViewHolder(final RecyclerView.ViewHolder holder, final int position) {
         if (holder instanceof CodeViewHolder) {
             final CountryCode code = filteredData.get(position).code;
-            final boolean selected = code.equals(this.selected);
-            adapter.bind((CountryCodeAdapter.CodeViewHolder) holder, code, selected);
+            adapter.bind((CountryCodeAdapter.CodeViewHolder) holder, code);
         }
     }
 

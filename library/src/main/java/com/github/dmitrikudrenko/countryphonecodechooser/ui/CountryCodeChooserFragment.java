@@ -13,6 +13,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import com.github.dmitrikudrenko.countryphonecodechooser.model.CountryCode;
+import com.github.dmitrikudrenko.countryphonecodechooser.ui.adapter.CountryCodeAdapter;
+import com.github.dmitrikudrenko.countryphonecodechooser.ui.adapter.CountryCodeHeaderAdapter;
 import com.github.dmitrikudrenko.countryphonecodechooser.utils.AssetsReader;
 import com.gituhb.dmitrikudrenko.countryphonecodechooser.R;
 import com.timehop.stickyheadersrecyclerview.StickyRecyclerHeadersDecoration;
