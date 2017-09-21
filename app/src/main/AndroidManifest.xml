@@ -16,7 +16,7 @@
             </intent-filter>
         </activity>
 
-        <activity android:name="com.gituhb.dmitrikudrenko.countryphonecodechooser.ui.CountryCodeChooserActivity" />
+        <activity android:name="com.github.dmitrikudrenko.countryphonecodechooser.ui.CountryCodeChooserActivity" />
     </application>
 
 </manifest>

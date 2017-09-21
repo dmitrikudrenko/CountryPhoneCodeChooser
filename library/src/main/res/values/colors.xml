@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="border">#000</color>
+
+    <color name="country_text">#e2000000</color>
+
+    <color name="selection">#1a3f51b5</color>
+
+    <color name="section_background">#f3f5f6</color>
+    <color name="section_text">#8a9faf</color>
+</resources>

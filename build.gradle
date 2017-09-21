@@ -1,20 +1,18 @@
-// Top-level build file where you can add configuration options common to all sub-projects/modules.
-
 buildscript {
     repositories {
         jcenter()
+        google()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:2.2.1'
-        classpath 'com.novoda:bintray-release:0.3.4'
-        // NOTE: Do not place your application dependencies here; they belong
-        // in the individual module build.gradle files
+        classpath 'com.android.tools.build:gradle:3.0.0-beta6'
+        classpath 'com.novoda:bintray-release:0.5.0'
     }
 }
 
 allprojects {
     repositories {
         jcenter()
+        google()
     }
 }
 
@@ -23,11 +21,13 @@ task clean(type: Delete) {
 }
 
 project.ext {
-    androidCompileSdkVersion = 24
-    androidBuildToolsVersion = '24.0.2'
+    androidCompileSdkVersion = 26
+    androidBuildToolsVersion = '26.0.1'
     androidMinSdkVersion = 14
-    androidTargetSdkVersion = 24
+    androidTargetSdkVersion = 26
 
-    libraryVersionCode = 1
-    libraryVersionName = "1.0"
+    supportVersion = '26.1.0'
+
+    libraryVersionCode = 2
+    libraryVersionName = "2.0"
 }

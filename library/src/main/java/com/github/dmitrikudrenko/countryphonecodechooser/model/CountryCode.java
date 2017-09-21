@@ -1,9 +1,8 @@
-package com.gituhb.dmitrikudrenko.countryphonecodechooser.model;
+package com.github.dmitrikudrenko.countryphonecodechooser.model;
 
 import android.os.Parcel;
 import android.os.Parcelable;
 import android.support.annotation.NonNull;
-
 import com.google.gson.annotations.SerializedName;
 
 public class CountryCode implements Comparable<CountryCode>, Parcelable {
@@ -17,12 +16,6 @@ public class CountryCode implements Comparable<CountryCode>, Parcelable {
     private boolean isDefault;
 
     private CountryCode() {
-    }
-
-    public CountryCode(String name, String phoneCode, String code) {
-        this.name = name;
-        this.phoneCode = phoneCode;
-        this.code = code;
     }
 
     @Override
