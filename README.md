@@ -6,6 +6,8 @@ Component given ability to choose phone code from list.
 ##Screenshots
 <img src="https://raw.githubusercontent.com/dmitrikudrenko/CountryPhoneCodeChooser/master/media/screenshot_1.png" alt="screenshot 1" width="320">
 <img src="https://raw.githubusercontent.com/dmitrikudrenko/CountryPhoneCodeChooser/master/media/screenshot_2.png" alt="screenshot 2" width="320">
+<img src="https://raw.githubusercontent.com/dmitrikudrenko/CountryPhoneCodeChooser/master/media/screenshot_3.png" alt="screenshot 3" width="320">
+<img src="https://raw.githubusercontent.com/dmitrikudrenko/CountryPhoneCodeChooser/master/media/screenshot_4.png" alt="screenshot 4" width="320">
 
 Download
 --------
