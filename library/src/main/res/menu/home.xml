@@ -4,6 +4,6 @@
     <item
         android:id="@+id/search"
         android:icon="@drawable/vec_search"
-        android:title="@string/search_action_title"
+        android:title="@string/cc_search_action_title"
         app:showAsAction="always"/>
 </menu>

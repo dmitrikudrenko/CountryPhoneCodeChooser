@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <dimen name="row_horizontal_padding">16dp</dimen>
+    <dimen name="cc_row_horizontal_padding">16dp</dimen>
+    <dimen name="cc_row_height">56dp</dimen>
 
-    <dimen name="country_row_height">56dp</dimen>
-    <dimen name="country_horizontal_padding">@dimen/row_horizontal_padding</dimen>
-    <dimen name="country_code_horizontal_padding">8dp</dimen>
-    <dimen name="country_name_size">18sp</dimen>
-    <dimen name="country_code_size">18sp</dimen>
-    <dimen name="flag_height">20dp</dimen>
-    <dimen name="flag_width">30dp</dimen>
+    <dimen name="cc_country_horizontal_padding">@dimen/cc_row_horizontal_padding</dimen>
+    <dimen name="cc_country_code_horizontal_padding">8dp</dimen>
+    <dimen name="cc_country_name_size">18sp</dimen>
+    <dimen name="cc_country_code_size">18sp</dimen>
+    <dimen name="cc_flag_height">20dp</dimen>
+    <dimen name="cc_flag_width">30dp</dimen>
 
-    <dimen name="section_row_height">24dp</dimen>
-    <dimen name="section_horizontal_padding">@dimen/row_horizontal_padding</dimen>
-    <dimen name="section_size">14sp</dimen>
+    <dimen name="cc_section_row_height">24dp</dimen>
+    <dimen name="cc_section_horizontal_padding">@dimen/cc_row_horizontal_padding</dimen>
+    <dimen name="cc_section_size">14sp</dimen>
 </resources>

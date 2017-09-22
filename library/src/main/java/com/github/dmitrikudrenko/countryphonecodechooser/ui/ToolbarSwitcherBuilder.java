@@ -91,9 +91,9 @@ class ToolbarSwitcherBuilder {
 
     private void setupSearchEditText(SearchView searchView) {
         AutoCompleteTextView editText = searchView.findViewById(android.support.v7.appcompat.R.id.search_src_text);
-        editText.setHint(context.getString(R.string.search_hint));
-        editText.setHintTextColor(ContextCompat.getColor(context, R.color.search_hint));
-        editText.setTextColor(ContextCompat.getColor(context, R.color.search_text));
+        editText.setHint(context.getString(R.string.cc_search_hint));
+        editText.setHintTextColor(ContextCompat.getColor(context, R.color.cc_search_hint));
+        editText.setTextColor(ContextCompat.getColor(context, R.color.cc_search_text));
 
         try {
             Field mCursorDrawableRes = TextView.class.getDeclaredField("mCursorDrawableRes");
@@ -128,7 +128,7 @@ class ToolbarSwitcherBuilder {
             anim = ViewAnimationUtils.createCircularReveal(toolbar, cx, cy, (float) width, 0);
         }
 
-        anim.setDuration(context.getResources().getInteger(R.integer.search_toolbar_animation_duration));
+        anim.setDuration(context.getResources().getInteger(R.integer.cc_search_toolbar_animation_duration));
 
         anim.addListener(new AnimatorListenerAdapter() {
             @Override

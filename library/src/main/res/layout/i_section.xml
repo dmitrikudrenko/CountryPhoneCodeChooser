@@ -4,18 +4,18 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/section_container"
     android:layout_width="match_parent"
-    android:layout_height="@dimen/section_row_height"
-    android:background="@color/section_background"
+    android:layout_height="@dimen/cc_section_row_height"
+    android:background="@color/cc_section_background"
     android:gravity="center_vertical"
-    android:paddingLeft="@dimen/section_horizontal_padding"
-    android:paddingRight="@dimen/section_horizontal_padding">
+    android:paddingLeft="@dimen/cc_section_horizontal_padding"
+    android:paddingRight="@dimen/cc_section_horizontal_padding">
 
     <TextView
         android:id="@+id/section"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="sans-serif-medium"
-        android:textColor="@color/section_text"
-        android:textSize="@dimen/section_size"
+        android:textColor="@color/cc_section_text"
+        android:textSize="@dimen/cc_section_size"
         tools:text="A"/>
 </LinearLayout>

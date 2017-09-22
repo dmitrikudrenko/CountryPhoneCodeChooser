@@ -5,7 +5,7 @@
     android:id="@+id/search_toolbar"
     android:layout_width="match_parent"
     android:layout_height="?attr/actionBarSize"
-    android:background="@color/search_background"
+    android:background="@color/cc_search_background"
     android:visibility="invisible"
     app:collapseIcon="@drawable/vec_back"
     app:titleTextColor="?attr/colorPrimary"/>

@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="border">#000000</color>
+    <color name="cc_border">#000000</color>
 
-    <color name="country_text">#e2000000</color>
+    <color name="cc_country_text">#e2000000</color>
 
-    <color name="row_selection">#1a3f51b5</color>
+    <color name="cc_row_selection">#1a3f51b5</color>
 
-    <color name="section_background">#f3f5f6</color>
-    <color name="section_text">#8a9faf</color>
+    <color name="cc_section_background">#f3f5f6</color>
+    <color name="cc_section_text">#8a9faf</color>
 
-    <color name="icon">#ffffff</color>
+    <color name="cc_icon">#ffffff</color>
 
-    <color name="search_background">#ffffff</color>
-    <color name="search_hint">#8a9faf</color>
-    <color name="search_text">#e6000000</color>
+    <color name="cc_search_background">#ffffff</color>
+    <color name="cc_search_hint">#8a9faf</color>
+    <color name="cc_search_text">#e6000000</color>
 
 </resources>

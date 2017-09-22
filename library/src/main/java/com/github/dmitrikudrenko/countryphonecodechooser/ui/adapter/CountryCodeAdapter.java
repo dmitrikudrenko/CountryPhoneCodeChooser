@@ -93,8 +93,8 @@ public class CountryCodeAdapter extends RecyclerView.Adapter<CountryCodeAdapter.
         void bind(final CountryCode countryCode, final boolean selected) {
             this.countryCode = countryCode;
             final Context context = itemView.getContext();
-            final int borderColor = ContextCompat.getColor(context, R.color.border);
-            final int borderSize = context.getResources().getInteger(R.integer.border_size);
+            final int borderColor = ContextCompat.getColor(context, R.color.cc_border);
+            final int borderSize = context.getResources().getInteger(R.integer.cc_border_size);
             Picasso.with(context)
                     .load(getFlagImageResource(context, countryCode))
                     .fit()
