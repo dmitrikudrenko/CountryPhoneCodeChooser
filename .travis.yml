@@ -14,10 +14,6 @@ android:
 jdk:
   - oraclejdk8
 
-before_install:
-  - chmod +x gradlew
-  - chmod +x .buildscript/deploy_snapshot.sh
-
 after_success:
   - .buildscript/deploy_snapshot.sh
 
