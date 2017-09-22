@@ -101,7 +101,7 @@ class ToolbarSwitcherBuilder {
     private void setupSearchEditText(SearchView searchView) {
         AutoCompleteTextView editText = searchView.findViewById(android.support.v7.appcompat.R.id.search_src_text);
         editText.setHint(context.getString(R.string.search_hint));
-        editText.setHintTextColor(ContextCompat.getColor(context, R.color.hint_text));
+        editText.setHintTextColor(ContextCompat.getColor(context, R.color.search_hint));
         editText.setTextColor(ContextCompat.getColor(context, R.color.search_text));
 
         try {

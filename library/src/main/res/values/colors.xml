@@ -4,14 +4,15 @@
 
     <color name="country_text">#e2000000</color>
 
-    <color name="selection">#1a3f51b5</color>
+    <color name="row_selection">#1a3f51b5</color>
 
     <color name="section_background">#f3f5f6</color>
     <color name="section_text">#8a9faf</color>
 
     <color name="icon">#ffffff</color>
-    <color name="hint_text">#e6000000</color>
-    <color name="search_text">#e6000000</color>
 
     <color name="search_background">#ffffff</color>
+    <color name="search_hint">#8a9faf</color>
+    <color name="search_text">#e6000000</color>
+
 </resources>
