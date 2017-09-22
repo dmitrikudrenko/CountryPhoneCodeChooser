@@ -9,7 +9,7 @@ public class Section {
 
     private final char id;
 
-    public Section(final char id) {
+    Section(final char id) {
         this.id = id;
     }
 

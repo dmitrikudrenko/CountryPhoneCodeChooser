@@ -16,7 +16,7 @@ public abstract class CountryCodeSectionAdapter<T extends RecyclerView.ViewHolde
     protected final CountryCodeAdapter adapter;
     private final SectionDataWrapper sectionDataWrapper = new SectionDataWrapper();
 
-    public CountryCodeSectionAdapter(CountryCodeAdapter adapter) {
+    CountryCodeSectionAdapter(CountryCodeAdapter adapter) {
         this.adapter = adapter;
         adapter.registerAdapterDataObserver(new AdapterDataObserver() {
             @Override
@@ -48,7 +48,7 @@ public abstract class CountryCodeSectionAdapter<T extends RecyclerView.ViewHolde
         return sectionDataWrapper.getItemCount();
     }
 
-    public SectionCountry getSectionCountry(int position) {
+    SectionCountry getSectionCountry(int position) {
         return sectionDataWrapper.getSectionCountry(position);
     }
 }

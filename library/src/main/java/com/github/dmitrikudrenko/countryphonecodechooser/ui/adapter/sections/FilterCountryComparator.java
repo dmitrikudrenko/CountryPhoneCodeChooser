@@ -11,7 +11,7 @@ public class FilterCountryComparator implements Comparator<SectionCountry> {
     private static final int MAX_PRIORITY = 10;
     private String filter;
 
-    public FilterCountryComparator(final String filter) {
+    FilterCountryComparator(final String filter) {
         this.filter = filter;
     }
 

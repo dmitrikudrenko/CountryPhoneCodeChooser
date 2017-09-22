@@ -9,7 +9,7 @@ public class SectionCountry {
     private final Section section;
     private final CountryCode code;
 
-    public SectionCountry(final Section section, final CountryCode code) {
+    SectionCountry(final Section section, final CountryCode code) {
         this.section = section;
         this.code = code;
     }
