@@ -1,6 +1,8 @@
 package com.github.dmitrikudrenko.countryphonecodechooser.ui.adapter;
 
 import android.content.Context;
+import android.support.annotation.RestrictTo;
+import android.support.annotation.RestrictTo.Scope;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -9,12 +11,14 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 import com.github.dmitrikudrenko.countryphonecodechooser.model.CountryCode;
+import com.github.dmitrikudrenko.countryphonecodechooser.utils.BorderTransformation;
 import com.gituhb.dmitrikudrenko.countryphonecodechooser.R;
 import com.squareup.picasso.Picasso;
 
 import java.util.Collections;
 import java.util.List;
 
+@RestrictTo(Scope.LIBRARY)
 public class CountryCodeAdapter extends RecyclerView.Adapter<CountryCodeAdapter.CodeViewHolder> {
     private List<CountryCode> data = Collections.emptyList();
     private CountryCode selected;

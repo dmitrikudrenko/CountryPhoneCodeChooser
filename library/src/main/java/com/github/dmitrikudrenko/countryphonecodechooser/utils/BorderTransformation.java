@@ -1,4 +1,4 @@
-package com.github.dmitrikudrenko.countryphonecodechooser.ui.adapter;
+package com.github.dmitrikudrenko.countryphonecodechooser.utils;
 
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
@@ -8,11 +8,11 @@ import android.support.annotation.RestrictTo.Scope;
 import com.squareup.picasso.Transformation;
 
 @RestrictTo(Scope.LIBRARY)
-class BorderTransformation implements Transformation {
+public class BorderTransformation implements Transformation {
     private final int color;
     private final int borderSize;
 
-    BorderTransformation(int color, int borderSize) {
+    public BorderTransformation(int color, int borderSize) {
         this.color = color;
         this.borderSize = borderSize;
     }
