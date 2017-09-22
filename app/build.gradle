@@ -5,7 +5,7 @@ android {
     buildToolsVersion androidBuildToolsVersion
 
     defaultConfig {
-        applicationId "com.gituhb.dmitrikudrenko.countryphonecodechooser.sample"
+        applicationId "com.github.dmitrikudrenko.countryphonecodechooser.sample"
         minSdkVersion androidMinSdkVersion
         targetSdkVersion androidTargetSdkVersion
         versionCode libraryVersionCode
