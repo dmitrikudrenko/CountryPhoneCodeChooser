@@ -6,6 +6,6 @@
     android:layout_width="match_parent"
     android:layout_height="?attr/actionBarSize"
     android:background="@color/search_background"
-    android:visibility="gone"
+    android:visibility="invisible"
     app:collapseIcon="@drawable/vec_back"
     app:titleTextColor="?attr/colorPrimary"/>

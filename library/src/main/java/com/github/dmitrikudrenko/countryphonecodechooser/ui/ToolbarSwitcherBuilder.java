@@ -38,12 +38,7 @@ class ToolbarSwitcherBuilder {
         searchToolbar.inflateMenu(R.menu.search);
         searchMenu = searchToolbar.getMenu();
 
-        searchToolbar.setNavigationOnClickListener(v -> {
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP)
-                circleReveal(searchToolbar, false);
-            else
-                searchToolbar.setVisibility(View.GONE);
-        });
+        searchToolbar.setNavigationOnClickListener(v -> hideSearchToolbar());
 
         searchMenuItem = searchMenu.findItem(R.id.search);
 
@@ -55,11 +50,7 @@ class ToolbarSwitcherBuilder {
 
             @Override
             public boolean onMenuItemActionCollapse(MenuItem menuItem) {
-                // Do something when collapsed
-                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-                    circleReveal(searchToolbar, false);
-                } else
-                    searchToolbar.setVisibility(View.GONE);
+                hideSearchToolbar();
                 return true;
             }
         });
@@ -157,12 +148,33 @@ class ToolbarSwitcherBuilder {
     }
 
     void onSearchMenuItemClicked() {
+        showSearchToolbar();
+        searchMenuItem.expandActionView();
+    }
+
+    boolean onBackPressed() {
+        if (searchMenuItem.isActionViewExpanded()) {
+            hideSearchToolbar();
+            searchMenuItem.collapseActionView();
+            return true;
+        }
+        return false;
+    }
+
+    private void showSearchToolbar() {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             circleReveal(searchToolbar, true);
         } else {
             searchToolbar.setVisibility(View.VISIBLE);
         }
-        searchMenuItem.expandActionView();
+    }
+
+    private void hideSearchToolbar() {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            circleReveal(searchToolbar, false);
+        } else {
+            searchToolbar.setVisibility(View.INVISIBLE);
+        }
     }
 
     static ToolbarSwitcherBuilder build(Toolbar searchToolbar, OnSearchInputListener onSearchInputListener) {

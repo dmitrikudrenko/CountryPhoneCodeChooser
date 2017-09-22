@@ -58,6 +58,13 @@ public class CountryCodeChooserActivity extends AppCompatActivity implements OnS
         }
     }
 
+    @Override
+    public void onBackPressed() {
+        if (!toolbarSwitcherBuilder.onBackPressed()) {
+            super.onBackPressed();
+        }
+    }
+
     public void onCountrySelected(final CountryCode countryCode) {
         setResult(RESULT_OK, new Intent().putExtra(KEY_COUNTRY, countryCode));
         finish();
