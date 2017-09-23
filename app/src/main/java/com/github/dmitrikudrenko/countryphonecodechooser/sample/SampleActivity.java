@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.TextView;
 import com.github.dmitrikudrenko.countryphonecodechooser.model.CountryCode;
 import com.github.dmitrikudrenko.countryphonecodechooser.ui.CountryCodeChooserActivity;
+import com.github.dmitrikudrenko.countryphonecodechooser.utils.CountryCodeIntent;
 
 public class SampleActivity extends AppCompatActivity {
     private static final int REQUEST_CODE = 1;
@@ -22,17 +23,14 @@ public class SampleActivity extends AppCompatActivity {
     }
 
     public void select(final View view) {
-        Intent intent = new Intent(this, CountryCodeChooserActivity.class)
-                .putExtra(CountryCodeChooserActivity.KEY_COUNTRY, country);
-        startActivityForResult(intent, REQUEST_CODE);
+        CountryCodeChooserActivity.start(this, country, REQUEST_CODE);
     }
 
     @Override
     protected void onActivityResult(final int requestCode, final int resultCode, final Intent data) {
         if (requestCode == REQUEST_CODE) {
             if (resultCode == RESULT_OK) {
-                final CountryCode country = data.getParcelableExtra(CountryCodeChooserActivity.KEY_COUNTRY);
-                setCountry(country);
+                setCountry(CountryCodeIntent.get(data));
             }
         } else {
             super.onActivityResult(requestCode, resultCode, data);

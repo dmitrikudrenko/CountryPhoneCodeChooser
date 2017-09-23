@@ -49,7 +49,7 @@ public class CountryCodeChooserFragment extends Fragment {
         this.adapter.setOnCodeSelectListener(this::onCountrySelected);
         int position = 0;
         if (getArguments() != null) {
-            CountryCode countryCode = getArguments().getParcelable(CountryCodeChooserActivity.KEY_COUNTRY);
+            CountryCode countryCode = getArguments().getParcelable(CountryCodeChooserActivity.EXTRA_COUNTRY);
             position = countryList.indexOf(countryCode);
             this.adapter.setSelected(countryCode);
         }

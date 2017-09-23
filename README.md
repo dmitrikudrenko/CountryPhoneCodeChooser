@@ -8,9 +8,22 @@ Component given ability to choose phone code from list.
 <img src="https://raw.githubusercontent.com/dmitrikudrenko/CountryPhoneCodeChooser/master/media/screenshot_3.png" alt="screenshot 3" width="320">
 <img src="https://raw.githubusercontent.com/dmitrikudrenko/CountryPhoneCodeChooser/master/media/screenshot_4.png" alt="screenshot 4" width="320">
 
+# Usage
+To open country selector screen, call
+```Java
+CountryCodeChooserActivity.start(this, country, REQUEST_CODE);
+```
+where ```this``` is activity or fragment. ```country``` can be nullable.
+
+Also override ```onActivityResult```
+```Java
+CountryCode code = CountryCodeIntent.get(data);
+```
+where ```data``` is output intent.
+
 Download
 --------
-[ ![Download](https://api.bintray.com/packages/dmitrikudrenko/maven/Countryphonecodechooser/images/download.svg) ](https://bintray.com/dmitrikudrenko/maven/Countryphonecodechooser/_latestVersion)
+[![Download](https://api.bintray.com/packages/dmitrikudrenko/maven/Countryphonecodechooser/images/download.svg)](https://bintray.com/dmitrikudrenko/maven/Countryphonecodechooser/_latestVersion)
 [![Build Status](https://travis-ci.org/dmitrikudrenko/CountryPhoneCodeChooser.svg?branch=master)](https://travis-ci.org/dmitrikudrenko/Countryphonecodechooser)
 
 Maven

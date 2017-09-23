@@ -1,5 +1,8 @@
 package com.github.dmitrikudrenko.countryphonecodechooser.ui;
 
+import android.app.Activity;
+import android.app.Fragment;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -11,11 +14,24 @@ import com.github.dmitrikudrenko.countryphonecodechooser.model.CountryCode;
 import com.gituhb.dmitrikudrenko.countryphonecodechooser.R;
 
 public class CountryCodeChooserActivity extends AppCompatActivity implements OnSearchInputListener {
-    public static final String KEY_COUNTRY = "code";
+    public static final String EXTRA_COUNTRY = "key_country";
     private static final String TAG_FRAGMENT =
             "com.github.dmitrikudrenko.countryphonecodechooser.ui.CountryCodeChooserFragment";
     private CountryCodeChooserFragment fragment;
     private ToolbarSwitcherBuilder toolbarSwitcherBuilder;
+
+    public static void start(Activity activity, CountryCode countryCode, int requestCode) {
+        activity.startActivityForResult(intent(activity, countryCode), requestCode);
+    }
+
+    public static void start(Fragment fragment, CountryCode countryCode, int requestCode) {
+        fragment.startActivityForResult(intent(fragment.getActivity(), countryCode), requestCode);
+    }
+
+    private static Intent intent(Context context, CountryCode countryCode) {
+        return new Intent(context, CountryCodeChooserActivity.class)
+                .putExtra(EXTRA_COUNTRY, countryCode);
+    }
 
     @Override
     protected void onCreate(final @Nullable Bundle savedInstanceState) {
@@ -66,7 +82,7 @@ public class CountryCodeChooserActivity extends AppCompatActivity implements OnS
     }
 
     public void onCountrySelected(final CountryCode countryCode) {
-        setResult(RESULT_OK, new Intent().putExtra(KEY_COUNTRY, countryCode));
+        setResult(RESULT_OK, new Intent().putExtra(EXTRA_COUNTRY, countryCode));
         finish();
     }
 
