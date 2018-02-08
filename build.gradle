@@ -4,7 +4,7 @@ buildscript {
         google()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:3.0.0-beta6'
+        classpath 'com.android.tools.build:gradle:3.0.1'
         classpath 'com.novoda:bintray-release:0.5.0'
     }
 }
@@ -21,13 +21,13 @@ task clean(type: Delete) {
 }
 
 project.ext {
-    androidCompileSdkVersion = 26
-    androidBuildToolsVersion = '26.0.1'
+    androidCompileSdkVersion = 27
+    androidBuildToolsVersion = '27.0.3'
     androidMinSdkVersion = 14
-    androidTargetSdkVersion = 26
+    androidTargetSdkVersion = 27
 
-    supportVersion = '26.1.0'
+    supportVersion = '27.0.2'
 
-    libraryVersionCode = 3
-    libraryVersionName = "2.1"
+    libraryVersionCode = 4
+    libraryVersionName = "2.2"
 }
