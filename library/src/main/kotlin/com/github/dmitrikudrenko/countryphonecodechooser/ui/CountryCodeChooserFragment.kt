@@ -56,8 +56,10 @@ class CountryCodeChooserFragment : Fragment() {
         var position = 0
         arguments?.let {
             val countryCode = it.getParcelable<CountryCode>(CountryCodeChooserActivity.EXTRA_COUNTRY)
-            position = countryList.indexOf(countryCode)
-            adapter.setSelected(countryCode)
+            countryCode?.let {
+                position = countryList.indexOf(it)
+                adapter.setSelected(it)
+            }
         }
         recyclerView.adapter = adapter
         recyclerView.addItemDecoration(StickyRecyclerHeadersDecoration(adapter))

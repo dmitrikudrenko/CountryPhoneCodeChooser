@@ -3,6 +3,7 @@ package com.github.dmitrikudrenko.countryphonecodechooser.ui.adapter.sections
 import com.github.dmitrikudrenko.countryphonecodechooser.model.CountryCode
 import com.github.dmitrikudrenko.countryphonecodechooser.ui.adapter.HeaderAdapter.Companion.HEADERS
 import com.github.dmitrikudrenko.countryphonecodechooser.ui.adapter.sections.Section.Companion.EMPTY_SECTION
+import com.github.dmitrikudrenko.countryphonecodechooser.utils.containsIgnoreCase
 import java.util.*
 
 
@@ -63,11 +64,9 @@ class SectionDataWrapper {
     }
 
     private fun matches(code: CountryCode): Boolean {
-        return filter?.let {
-            !it.isBlank()
-                    || code.name.toLowerCase().contains(it.toLowerCase())
-                    || code.phoneCode.contains(it)
-        } ?: true
+        return filter.isNullOrBlank()
+                || code.name.containsIgnoreCase(filter)
+                || code.phoneCode.containsIgnoreCase(filter)
     }
 
     private fun findSection(code: CountryCode): Section {

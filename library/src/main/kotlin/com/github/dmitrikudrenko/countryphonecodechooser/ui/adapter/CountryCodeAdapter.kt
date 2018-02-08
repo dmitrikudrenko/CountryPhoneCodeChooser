@@ -92,7 +92,8 @@ class CountryCodeAdapter : RecyclerView.Adapter<CountryCodeAdapter.CodeViewHolde
         }
 
         private fun getFlagImageResource(context: Context, countryCode: CountryCode): Int {
-            val resourceName = "country_flag_" + countryCode.code
+            val code = countryCode.code.toLowerCase()
+            val resourceName = "country_flag_$code"
             return context.resources.getIdentifier(resourceName, "drawable", context.packageName)
         }
 

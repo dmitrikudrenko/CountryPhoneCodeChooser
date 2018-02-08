@@ -6,5 +6,5 @@ import com.github.dmitrikudrenko.countryphonecodechooser.ui.CountryCodeChooserAc
 
 object CountryCodeIntent {
     operator fun get(intent: Intent?) =
-            intent?.getParcelableExtra<CountryCode>(CountryCodeChooserActivity.EXTRA_COUNTRY)
+            intent?.getParcelableExtra<CountryCode?>(CountryCodeChooserActivity.EXTRA_COUNTRY)
 }
