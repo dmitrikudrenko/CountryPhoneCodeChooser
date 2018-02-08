@@ -72,15 +72,15 @@ class CountryCodeChooserActivity : AppCompatActivity(), OnSearchInputListener {
         val EXTRA_COUNTRY = "key_country"
         private val TAG_FRAGMENT = "CountryCodeChooserFragment"
 
-        fun start(activity: Activity, countryCode: CountryCode, requestCode: Int) {
+        fun start(activity: Activity, countryCode: CountryCode?, requestCode: Int) {
             activity.startActivityForResult(intent(activity, countryCode), requestCode)
         }
 
-        fun start(fragment: Fragment, countryCode: CountryCode, requestCode: Int) {
+        fun start(fragment: Fragment, countryCode: CountryCode?, requestCode: Int) {
             fragment.startActivityForResult(intent(fragment.activity, countryCode), requestCode)
         }
 
-        private fun intent(context: Context, countryCode: CountryCode) =
+        private fun intent(context: Context, countryCode: CountryCode?) =
                 Intent(context, CountryCodeChooserActivity::class.java)
                         .putExtra(EXTRA_COUNTRY, countryCode)
     }
